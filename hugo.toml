@@ -1,0 +1,55 @@
+baseURL = 'https://rmc.triaxis.games/'
+languageCode = 'en-us'
+title = 'Realtime Mesh Docs'
+theme = "hugo-theme-relearn"
+
+# canonicalization will only be used for the sitemap.xml and index.xml files;
+# if set to false, a site served from a subdirectory will generate wrong links
+# inside of the above mentioned files; if you serve the page from the servers root
+# you are free to set the value to false as recommended by the official Hugo documentation
+canonifyURLs = true # true -> all relative URLs would instead be canonicalized using baseURL
+# required value to serve this page from a webserver AND the file system;
+# if you don't want to serve your page from the file system, you can also set this value
+# to false
+relativeURLs = true # true -> rewrite all relative URLs to be relative to the current content
+# if you set uglyURLs to false, this theme will append 'index.html' to any branch bundle link
+# so your page can be also served from the file system; if you don't want that,
+# set disableExplicitIndexURLs=true in the [params] section
+uglyURLs = false     # true -> basic/index.html -> basic.html
+
+
+[outputs]
+  # add JSON to the home to support Lunr search; This is a mandatory setting
+  # for the search functionality
+  # add PRINT to home, section and page to activate the feature to print whole
+  # chapters
+  home = ["HTML", "RSS", "PRINT", "SEARCH", "SEARCHPAGE"]
+  section = ["HTML", "RSS", "PRINT"]
+  page = ["HTML", "RSS", "PRINT"]
+
+
+# settings specific to this theme's features; choose to your likings and
+# consult this documentation for explaination
+[params]
+  editURL = "https://github.com/TriAxis-Games/RealtimeMeshComponent-Docs"
+  description = "Documentation for the Realtime Mesh Component"
+  author = "Chris Conway (Koderz)"
+  showVisitedLinks = true
+  collapsibleMenu = true
+  disableBreadcrumb = false
+  disableInlineCopyToClipBoard = true
+  disableNextPrev = false
+  disableLandingPageButton = true
+  breadcrumbSeparator = ">"
+  titleSeparator = "::"
+  themeVariant = [ "auto", "relearn-light", "relearn-dark" ]
+  themeVariantAuto = [ "relearn-light", "relearn-dark" ]
+  disableSeoHiddenPages = true
+  # this is to index search for your native language in other languages, too (eg.
+  # pir in this showcase)
+  additionalContentLanguage = [ "en" ]
+  # this is for the stylesheet generator to allow for interactivity in Mermaid
+  # graphs; you usually will not need it and you should remove this for
+  # security reasons
+  # mermaidInitialize = "{ \"securityLevel\": \"loose\" }"
+  mermaidZoom = true
